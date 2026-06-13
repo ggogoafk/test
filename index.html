@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>算力冲刺：计算器小游戏</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <section class="hero" aria-labelledby="game-title">
+      <p class="eyebrow">Calculator Game</p>
+      <h1 id="game-title">算力冲刺</h1>
+      <p class="subtitle">用计算器快速算出目标值，60 秒内尽可能连击得分！</p>
+    </section>
+
+    <section class="scoreboard" aria-label="游戏状态">
+      <div>
+        <span class="label">得分</span>
+        <strong id="score">0</strong>
+      </div>
+      <div>
+        <span class="label">连击</span>
+        <strong id="streak">0</strong>
+      </div>
+      <div>
+        <span class="label">时间</span>
+        <strong><span id="time">60</span>s</strong>
+      </div>
+    </section>
+
+    <section class="challenge-card" aria-live="polite">
+      <span class="label">本轮目标</span>
+      <div id="challenge" class="challenge">点击开始生成题目</div>
+      <p id="hint" class="hint">提示：答案四舍五入到整数。</p>
+    </section>
+
+    <section class="calculator" aria-label="计算器">
+      <output id="display" class="display" aria-label="当前输入">0</output>
+      <div class="keys">
+        <button data-action="clear" class="utility">C</button>
+        <button data-action="backspace" class="utility">⌫</button>
+        <button data-value="/" class="operator">÷</button>
+        <button data-value="*" class="operator">×</button>
+
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button data-value="-" class="operator">−</button>
+
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button data-value="+" class="operator">+</button>
+
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button data-action="submit" class="submit">提交</button>
+
+        <button data-value="0" class="zero">0</button>
+        <button data-value=".">.</button>
+        <button data-action="equals" class="operator">=</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="start" class="primary">开始游戏</button>
+      <button id="new-challenge" class="secondary" disabled>换一题 (-2 分)</button>
+    </section>
+
+    <p id="message" class="message">准备好了吗？按“开始游戏”挑战你的心算和计算器操作速度。</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
